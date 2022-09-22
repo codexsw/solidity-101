@@ -1,0 +1,35 @@
+{
+  "port": 3000,
+  "address": "http://localhost",
+  "editor": {
+    "mode": null,
+    "agent": null,
+    "version": null
+  },
+  "dirPath": "./.learn",
+  "configPath": "./learn.json",
+  "outputPath": "./.learn/dist",
+  "publicPath": "/preview",
+  "publicUrl": null,
+  "language": "auto",
+  "grading": "incremental",
+  "exercisesPath": "./",
+  "webpackTemplate": null,
+  "disableGrading": false,
+  "disabledActions": [],
+  "actions": [],
+  "entries": {
+    "html": "index.html",
+    "vanillajs": "index.js",
+    "react": "app.jsx",
+    "node": "app.js",
+    "python3": "app.py",
+    "java": "app.java",
+    "solidity": "contract.sol"
+  },
+  "difficulty": "easy",
+  "duration": 1,
+  "description": "",
+  "title": "Solidity 101",
+  "slug": "solidity-101"
+}
