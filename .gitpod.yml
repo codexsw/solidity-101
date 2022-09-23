@@ -12,7 +12,7 @@ vscode:
 
 tasks:
   - name: Open contract
-    command: gp open contract/Lock.sol
+    command: gp open contracts/Lock.sol
 
 github:
   prebuilds:

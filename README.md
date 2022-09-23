@@ -1,13 +1,4 @@
-# Sample Hardhat Project
+# Welcome to Solidity 101
+You have initialized the exercises with grading=`incremental`; meaning that your students will complete one single tutorial with clear and autograded steps from beginning to end.
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
+Type `$ learnpack start` in your terminal to start the exercises.
