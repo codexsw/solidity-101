@@ -1,9 +1,8 @@
-# `01` Hola Mundo
+# `02` Hola Mundo
 
 Puedes tener un archivo README el cual será como una página de un libro, sin archivos de código.
 
 También puedes agregar un archivo `README.[lenguaje].md` para traducciones, por ejemplo `README.es.md` para español.
-
 
 ## Inserta videos
 
@@ -16,7 +15,6 @@ intro: "https://www.youtube.com/watch?v=YkgkThdzX-8"
 ```
 
 Tambien puedes agregar un video explicando la solución para cada ejercicio agregando la propiedad `tutorial` al inicio del markdown del README.md correspondiente:
-
 
 ```markdown
 ---

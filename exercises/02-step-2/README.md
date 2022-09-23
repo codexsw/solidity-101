@@ -1,4 +1,4 @@
-# `01` Hello World
+# `02` Hello World
 
 You can have just a README file and it will be like a page in a book, no code files.
 
@@ -15,7 +15,6 @@ intro: "https://www.youtube.com/watch?v=YkgkThdzX-8"
 ```
 
 You can also add a video solution for each exercise by adding a `tutorial` property on the markdown frontmatter of it's README.md:
-
 
 ```markdown
 ---
