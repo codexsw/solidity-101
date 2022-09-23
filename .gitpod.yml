@@ -10,6 +10,10 @@ vscode:
     - learn-pack.learnpack-vscode
     - juanblanco.solidity
 
+tasks:
+  - name: Open contract
+    command: gp open contract/Lock.sol
+
 github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
