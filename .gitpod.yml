@@ -12,6 +12,7 @@ vscode:
 
 tasks:
   - name: Open contract
+    init: yarn
     command: gp open contracts/Lock.sol
 
 github:
