@@ -8,10 +8,11 @@ Lets modify our `NumberStorage` smart contract to store a couple of numbers. We 
 
 2. Add 2 functions called `setNumber1` and `setNumber2` that will allow you to set the value of `number1` and `number2` respectively.
 
-````solidity
+```solidity
 function setNumber1(uint256 _number) public {
   // your code goes here...
 }
+
 ```
 
 3. Add a function called `getSum` that returns the sum of the two numbers.
@@ -21,7 +22,7 @@ function getSum() public view returns (uint256) {
   // your code goes here...
 }
 
-````
+```
 
 4. Compile the code by clicking on the "Test" button above.
 
