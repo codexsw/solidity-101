@@ -58,3 +58,5 @@ function setOwner(address _owner) public {
 - _Use the `public` keyword to make the variables and function accessible from outside the smart contract._
 
 - _Use the `address` data type to store addresses._
+
+- _Run test manually by executing on a terminal: `npx hardhat test test/06.test.ts`_
