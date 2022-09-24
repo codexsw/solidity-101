@@ -31,10 +31,6 @@ function getSum() public view returns (uint256) {
 
 - _Use the `return` keyword to return a value from a function._
 
-- _Use the `this` keyword to access the smart contract's variables and functions._
-
-- _Use the `.` operator to access a variable or function of a smart contract._
-
 - _The only way to store data in a smart contract is by using variables._
 
-- _The only way to modify a variable is by using a function._
+- _The only way to modify a variable is by using a function. This functions are called in transactions._

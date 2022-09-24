@@ -11,12 +11,21 @@ describe("04", function () {
   }
 
   describe("Deployment", function () {
-    it("Store number", async function () {
+    it("Store numbers", async function () {
       const { numberStorage } = await loadFixture(deployOneYearLockFixture);
 
       await numberStorage.setNumber1(1992);
       await numberStorage.setNumber2(2021);
-      expect(await numberStorage.getSum()).to.equal(4013);
+      expect(await numberStorage.number1()).to.equal(1992);
+      expect(await numberStorage.number2()).to.equal(2021);
+    });
+
+    it("getSum", async function () {
+      const { numberStorage } = await loadFixture(deployOneYearLockFixture);
+
+      await numberStorage.setNumber1(233);
+      await numberStorage.setNumber2(998);
+      expect(await numberStorage.getSum()).to.equal(998 + 233);
     });
   });
 });
