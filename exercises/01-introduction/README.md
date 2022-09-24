@@ -18,4 +18,10 @@ Doesn't matter if you are a beginner or an expert, we are all devs here. So, if 
 
 - If you get stuck, don't worry. Just click on the "Test" button. For more advanced students, you can also check the tests on each exercise.
 
+- If you found errors in your exercise the best way to track them is to manually run the tests cases on a terminal using this command:
+
+```
+$ npx test test/##-test.ts
+```
+
 **Lets go!**
