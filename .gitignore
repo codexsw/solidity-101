@@ -42,3 +42,5 @@ cache
 artifacts
 
 contracts/*.sol
+
+.idea/
