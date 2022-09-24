@@ -21,12 +21,25 @@ With this brief introduction to Solidity and smart contracts, let's start coding
 In this lesson we will learn how to write our first Solidity smart contract. We will start by creating a new file called `contracts/HelloWorld.sol` and we will add the following code:
 
 ```solidity
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
 contract HelloWorld {
-  function hello() public pure returns (string) {
+  function hello() public pure returns (string memory) {
     return "Hello World!";
   }
 }
 
 ```
+
+You can copy and paste the code above into your `contracts/HelloWorld.sol` file.
+
+Once you have the code above in your `contracts/HelloWorld.sol` file, you can compile it by clicking on the "Test" button above.
+
+Let's break down the code above:
+
+- The first line is a special comment that tells the compiler which version of the Solidity compiler this code was written for. We will learn more about this in the next lesson.
+
+- The contract keyword is used to define a new contract. A contract is a collection of functions and data (its state) that resides at a specific address on the Ethereum blockchain.
+
+- The function keyword is used to define a new function inside a contract. A function is a piece of code that performs an action. In this case, the function is called `hello` and it returns a string.
