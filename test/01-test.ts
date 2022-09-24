@@ -5,19 +5,17 @@ import { ethers } from "hardhat";
 
 describe("01", function () {
   async function deployOneYearLockFixture() {
-    const [owner] = await ethers.getSigners();
-
     const HelloWorld = await ethers.getContractFactory("HelloWorld");
     const helloWorld = await HelloWorld.deploy();
 
-    return { owner, helloWorld };
+    return { helloWorld };
   }
 
   describe("Deployment", function () {
-    it("Should set the right owner", async function () {
-      const { helloWorld, owner } = await loadFixture(deployOneYearLockFixture);
+    it("Call hello", async function () {
+      const { helloWorld } = await loadFixture(deployOneYearLockFixture);
 
-      expect(await helloWorld.owner()).to.equal(owner.address);
+      expect(await helloWorld.hello()).to.equal("Hello World!");
     });
   });
 });
