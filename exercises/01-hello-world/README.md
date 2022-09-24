@@ -40,6 +40,6 @@ Let's break down the code above:
 
 - The first line is a special comment that tells the compiler which version of the Solidity compiler this code was written for. We will learn more about this in the next lesson.
 
-- The contract keyword is used to define a new contract. A contract is a collection of functions and data (its state) that resides at a specific address on the Ethereum blockchain.
+- The `contract` keyword is used to define a new contract. A contract is a collection of functions and data (its state) that resides at a specific address on the Ethereum blockchain.
 
-- The function keyword is used to define a new function inside a contract. A function is a piece of code that performs an action. In this case, the function is called `hello` and it returns a string.
+- The `function` keyword is used to define a new function inside a contract. A function is a piece of code that performs an action. In this case, the function is called `hello` and it returns a string.
