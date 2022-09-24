@@ -34,3 +34,5 @@ constructor(uint256 _number) {
 - _constructor functions are used to initialize the state of the smart contract._
 
 - _constructor functions don't have a return type._
+
+- _Run test manually by executing on a terminal: `npx hardhat test test/05.test.ts`_

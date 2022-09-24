@@ -32,3 +32,5 @@ function getSum() public view returns (uint256) {
 - _The only way to store data in a smart contract is by using variables._
 
 - _The only way to modify a variable is by using a function. This functions are called in transactions._
+
+- _Run test manually by executing on a terminal: `npx hardhat test test/06.test.ts`_

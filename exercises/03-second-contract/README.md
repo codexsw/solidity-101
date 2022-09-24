@@ -64,3 +64,7 @@ contract NumberStorage {
 ```
 
 2. Compile the code by clicking on the "Test" button above.
+
+## Remember
+
+- _Run test manually by executing on a terminal: `npx hardhat test test/03.test.ts`_
