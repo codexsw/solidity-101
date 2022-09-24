@@ -4,7 +4,7 @@ import { ethers } from "hardhat";
 
 describe("04", function () {
   async function deployOneYearLockFixture() {
-    const NumberStorage = await ethers.getContractFactory("NumberStorage");
+    const NumberStorage = await ethers.getContractFactory("NumberStorage04");
     const numberStorage = await NumberStorage.deploy();
 
     return { numberStorage };

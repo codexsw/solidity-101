@@ -4,7 +4,7 @@ Lets modify our `NumberStorage` smart contract to store a couple of numbers. We 
 
 ## Instructions
 
-1. Modify the `NumberStorage` smart contract to store two numbers. The first number should be stored in a variable called `number1` and the second number should be stored in a variable called `number2`.
+1. Create a `contracts/NumberStorage04` smart contract to store two numbers. The first number should be stored in a variable called `number1` and the second number should be stored in a variable called `number2`.
 
 2. Add 2 functions called `setNumber1` and `setNumber2` that will allow you to set the value of `number1` and `number2` respectively.
 
@@ -22,8 +22,6 @@ function getSum() public view returns (uint256) {
 ## Remember
 
 - _Use the `public` keyword to make the variables and function accessible from outside the smart contract._
-
-- _Use the `uint256` data type to store numbers._
 
 - _Use the `+` operator to add two numbers._
 

@@ -1,6 +1,6 @@
 # `05` Constructors
 
-In the previous exercise, we learned how to create a smart contract that stores data. However, we had to manually set the values of the variables. In this exercise, we will learn how to set the values of the variables automatically when the smart contract is deployed.
+In the previous exercise, we learned how to create a smart contract that stores data. However, we had to manually set the values of the variables, this will result in several transactions with associated costs. In this exercise, we will learn how to set the values of the variables automatically when the smart contract is deployed.
 
 Constructors are special functions that are executed when the smart contract is deployed. They are used to initialize the state of the smart contract. In this exercise, we will use a constructor to set the values of the variables.
 
@@ -21,7 +21,7 @@ constructor(uint256 _number) {
 
 ## Instructions
 
-1. Modify the `NumberStorage` smart contract to store two numbers. The first number should be stored in a variable called `number1` and the second number should be stored in a variable called `number2`. _Do not create functions to set the values of the variables._
+1. Create a `contracts/NumberStorage05` smart contract to store two numbers. The first number should be stored in a variable called `number1` and the second number should be stored in a variable called `number2`. _Do not create functions to set the values of the variables._
 
 2. Add a constructor that will allow you to set the value of `number1` and `number2` when the smart contract is deployed.
 
