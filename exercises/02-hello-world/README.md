@@ -38,7 +38,7 @@ Once you have the code above in your `contracts/HelloWorld.sol` file, you can co
 
 Let's break down the code above:
 
-- The first line is a special comment that tells the compiler which version of the Solidity compiler this code was written for. We will learn more about this in the next lesson.
+- The first line is a special comment that tells the compiler which version of the Solidity compiler this code was written for.
 
 - The `contract` keyword is used to define a new contract. A contract is a collection of functions and data (its state) that resides at a specific address on the Ethereum blockchain.
 
