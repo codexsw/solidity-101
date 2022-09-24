@@ -10,8 +10,12 @@ This coding environment is Gitpod. Gitpod is an online IDE that allows you to co
 
 Also we use self-grading exercises. This means that you can test your code by clicking on the "Test" button above. If your code passes all the tests, you will see a green checkmark. If your code fails one or more tests, you will see a red cross. You can click on the "Test" button as many times as you want.
 
-<table style="width: 100%; background-color: red; color: white; ">
-    <tr>
-        <td>Foo</td>
-    </tr>
-</table>
+## We are all devs here..
+
+Doesn't matter if you are a beginner or an expert, we are all devs here. So, if you have any questions, feel free to ask them in the chat. We are here to help you.
+
+- Copy and paste all the code. Don't type it manually. It will save you a lot of time.
+
+- If you get stuck, don't worry. Just click on the "Test" button. For more advanced students, you can also check the tests on each exercise.
+
+**Lets go!**
