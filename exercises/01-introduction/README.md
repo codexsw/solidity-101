@@ -18,4 +18,6 @@ Doesn't matter if you are a beginner or an expert, we are all devs here. So, if 
 
 - If you get stuck, don't worry. Just click on the "Test" button. For more advanced students, you can also check the tests on each exercise.
 
+<span style="color:green;font-weight:700;font-size:20px"> 
 **Lets go!**
+</span>
