@@ -29,7 +29,7 @@ The following table shows the different data types available in Solidity:
 A contract variable is a variable that is declared in the contract. A contract variable is stored in the contract's storage. Contract variables are written to the blockchain and are accessible to other contracts.
 
 ```
-<type> <modifier> <variableName> [= <initialValue>];
+<type> [modifiers] [visibility] <variableName> [= <initialValue>];
 ```
 
 ````
