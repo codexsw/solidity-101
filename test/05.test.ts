@@ -11,7 +11,8 @@ describe("05", function () {
   describe("Deployment", function () {
     it("Store numbers", async function () {
       const { NumberStorage } = await loadFixture(deployOneYearLockFixture);
-      await NumberStorage.deploy(1992, 2021);
+      const numberStorage = await NumberStorage.deploy(1992, 2021);
+      await numberStorage.deployed();
 
       expect(await numberStorage.number1()).to.equal(1992);
       expect(await numberStorage.number2()).to.equal(2021);
@@ -19,7 +20,8 @@ describe("05", function () {
 
     it("getSum", async function () {
       const { NumberStorage } = await loadFixture(deployOneYearLockFixture);
-      await NumberStorage.deploy(233, 998);
+      const numberStorage = await NumberStorage.deploy(233, 998);
+      await numberStorage.deployed();
 
       expect(await numberStorage.getSum()).to.equal(998 + 233);
     });
