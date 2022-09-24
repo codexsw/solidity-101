@@ -1,4 +1,4 @@
-# `01` Welcome to Solidity 101
+# `02` Welcome to Solidity 101
 
 Welcome to our first lesson of Solidity 101. In this lesson we will learn how to write our first Solidity smart contract.
 
