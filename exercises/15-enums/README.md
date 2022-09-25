@@ -95,6 +95,14 @@ contract Insurance {
   function getStatus() public view returns (PolicyStatus) {
     return status;
   }
+
+  function isActive() public view returns (bool) {
+    // your code here
+  }
+
+  function notActive() public view returns (bool) {
+    // your code here
+  }
 }
 
 ```
@@ -105,7 +113,11 @@ contract Insurance {
 
 2. Create a `PolicyStatus` enum with the following values: `QUOTE`, `BOUND`, `ISSUED`, `CANCELLED`, `EXPIRED`.
 
-3. Compile the code by clicking on the "Test" button above.
+3. Create a `isActive` function that will return `true` if the status of the policy is `BOUND` or `ISSUED`. Otherwise, it should return `false`.
+
+4. Create a `notActive` function that will return `true` if the status of the policy is `CANCELLED` or `EXPIRED`. Otherwise, it should return `false`.
+
+5. Compile the code by clicking on the "Test" button above.
 
 ## Remember
 
