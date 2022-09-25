@@ -21,7 +21,7 @@ describe("15", function () {
     it("not active yet", async function () {
       const { insurance } = await loadFixture(deployOneYearLockFixture);
       await insurance.changeStatus(ethers.BigNumber.from(0));
-      expect(await insurance.isActive()).not.to.be.true;
+      expect(await insurance.isActive()).to.be.false;
     });
 
     it("active", async function () {
@@ -35,7 +35,7 @@ describe("15", function () {
     it("still active", async function () {
       const { insurance } = await loadFixture(deployOneYearLockFixture);
       await insurance.changeStatus(ethers.BigNumber.from(1));
-      expect(await insurance.notInactive()).not.to.be.true;
+      expect(await insurance.notActive()).to.be.false;
     });
 
     it("not active", async function () {
