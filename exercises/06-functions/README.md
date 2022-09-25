@@ -59,4 +59,8 @@ function setOwner(address _owner) public {
 
 - _Use the `address` data type to store addresses._
 
-- _Run test manually by executing on a terminal: `npx hardhat test test/06.test.ts`_
+- _Run test manually by executing on a terminal:_
+
+```shell
+npx hardhat test test/07.test.ts
+```

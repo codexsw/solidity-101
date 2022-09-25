@@ -35,4 +35,8 @@ constructor(uint256 _number) {
 
 - _constructor functions don't have a return type._
 
-- _Run test manually by executing on a terminal: `npx hardhat test test/05.test.ts`_
+- _Run test manually by executing on a terminal:_
+
+```shell
+npx hardhat test test/07.test.ts
+```

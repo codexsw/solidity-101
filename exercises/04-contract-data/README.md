@@ -40,4 +40,8 @@ function getSum() public view returns (uint256) {
 
 - _The only way to modify a variable is by using a function. This functions are called in transactions._
 
-- _Run test manually by executing on a terminal: `npx hardhat test test/06.test.ts`_
+- _Run test manually by executing on a terminal:_
+
+```shell
+npx hardhat test test/07.test.ts
+```
