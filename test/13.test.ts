@@ -5,7 +5,7 @@ import { ethers } from "hardhat";
 describe("13", function () {
   async function deployOneYearLockFixture() {
     const Fundraiser = await ethers.getContractFactory("Fundraiser");
-    const funds = await Fundraiser.deploy();
+    const funds = await Fundraiser.deploy(ethers.utils.parseEther("10.0"));
 
     const [owner, addr1, addr2] = await ethers.getSigners();
     return { funds, owner, addr1, addr2 };
