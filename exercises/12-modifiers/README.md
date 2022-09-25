@@ -9,7 +9,7 @@ Syntax of a modifier:
 ```solidity
 modifier <name>() {
   // require statements and other code
-  _; <-- this is where the function body is inserted
+  _; // <-- this is where the function body is inserted
   // other code
 }
 ```

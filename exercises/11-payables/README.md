@@ -43,7 +43,7 @@ function getBalances() public view returns (uint256) {
 function withdraw(uint256 amount) public {
   // your code goes here...
   // send ether to msg.sender (only if balance allows it)
-  // (bool success, ) = msg.sender.call{ value: amount }(""); <-- this is how you send Ether
+  // (bool success, ) = msg.sender.call{ value: amount }(""); // <-- this is how you send Ether
   // require(success);
 }
 
