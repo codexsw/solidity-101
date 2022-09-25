@@ -50,10 +50,15 @@ To remove a value from the end of an array, you use the `pop` method. For exampl
 numbers.pop();
 ```
 
-Other functions that can be used on arrays are:
+For loops are used to iterate over arrays. For example:
 
-- `shift`
-- `unshift`
+```solidity
+for (uint256 i = 0; i < numbers.length; i++) {
+  numbers[i] = numbers[i] * 2;
+}
+```
+
+_(Solidity for loops are very similar to the ones on C++ or Java)_
 
 Lets try it out!
 
@@ -97,7 +102,7 @@ contract FIFOQueue {
 
 2. Implement the `enqueue` function. This function should add an address to the end of the queue.
 
-3. Implement the `dequeue` function. This function should remove the first address from the queue.
+3. Implement the `dequeue` function. This function should remove the first address from the queue. For this you will need to `shift` the array to the left. This can be done by using a for loop, moving each element to the left by one position, and then removing the last element from the array using the `pop` method.
 
 4. Implement the `length` function. This function should return the length of the queue.
 
