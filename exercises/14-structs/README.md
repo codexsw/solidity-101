@@ -33,6 +33,37 @@ Ex:
 Person person;
 ```
 
+to assign values to the variables of a struct, you use the dot operator followed by the name of the variable. For example:
+
+```solidity
+<variableName>.<paramName> = <value>;
+```
+
+Ex:
+
+```solidity
+person.name = "John";
+person.age = 30;
+```
+
+To create a variable of a struct type and assign values to the variables of the struct at the same time, you use the following syntax:
+
+```solidity
+<StructName> <variableName> = <StructName>({
+  <paramName>: <value>,
+  ...
+});
+```
+
+Ex:
+
+```solidity
+Person person = Person({
+  name: "John",
+  age: 30
+});
+```
+
 To access the variables of a struct, you use the dot operator followed by the name of the variable. For example:
 
 ```solidity
