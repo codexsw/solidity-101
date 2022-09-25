@@ -73,9 +73,7 @@ describe("13", function () {
         .connect(addr2)
         .deposit({ value: ethers.utils.parseEther("1") });
 
-      await expect(funds.connect(owner).withdraw())
-        .to.emit(funds, "Withdraw")
-        .withArgs(owner.address, ethers.utils.parseEther("2"));
+      await expect(funds.connect(owner).withdraw()).to.emit(funds, "Withdraw");
     });
   });
 });
