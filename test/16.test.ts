@@ -17,7 +17,7 @@ describe("16", function () {
       );
 
       await queue.enqueue(addr1.address);
-      expect(await queue.dequeue()).to.be.equal(addr1.address);
+      expect(await queue.head()).to.be.equal(addr1.address);
     });
   });
 
@@ -29,8 +29,8 @@ describe("16", function () {
 
       await queue.enqueue(addr1.address);
       await queue.enqueue(addr2.address);
-      expect(await queue.dequeue()).to.be.equal(addr1.address);
-      expect(await queue.dequeue()).to.be.equal(addr2.address);
+      await queue.dequeue(); // Removes addr1 from queue
+      expect(await queue.head()).to.be.equal(addr2.address);
     });
   });
 
@@ -66,10 +66,9 @@ describe("16", function () {
 
       await queue.enqueue(addr1.address);
       await queue.enqueue(addr2.address);
-      await queue.moveToEnd(addr1.address);
+      await queue.moveToEnd();
       expect(await queue.head()).to.be.equal(addr2.address);
-      expect(await queue.dequeue()).to.be.equal(addr2.address);
-      expect(await queue.dequeue()).to.be.equal(addr1.address);
+      expect(await queue.length()).to.be.equal(2);
     });
   });
 });

@@ -114,6 +114,8 @@ contract FIFOQueue {
 
 ## Remember
 
+- _Implement the `head`, `length` functions first, since most tests depend on them_
+
 - _Run test manually by executing on a terminal:_
 
 ```shell
