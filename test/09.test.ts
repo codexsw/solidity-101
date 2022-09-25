@@ -65,7 +65,7 @@ describe("09", function () {
       );
       await company.setShares(addr1.address, 1000);
       await company.setShares(addr2.address, 1000);
-      await company.transferShares(500, addr1.address, addr2.address);
+      await company.transferStock(500, addr1.address, addr2.address);
       expect(await company.getShares(addr1.address)).to.equal(500);
       expect(await company.getShares(addr2.address)).to.equal(1500);
     });
@@ -76,9 +76,21 @@ describe("09", function () {
       );
       await company.setShares(addr1.address, 1000);
       await company.setShares(addr2.address, 1000);
-      expect(
-        await company.transferShares(0, addr1.address, addr2.address)
-      ).to.be.reverted();
+      await expect(company.transferStock(0, addr1.address, addr2.address)).to.be
+        .reverted;
+    });
+
+    it("transfer more stock than available should revert", async function () {
+      const { company, addr1, addr2 } = await loadFixture(
+        deployOneYearLockFixture
+      );
+      await company.setShares(addr1.address, 1000);
+      await company.setShares(addr2.address, 1000);
+      const op = company.transferStock(2000, addr1.address, addr2.address);
+      await expect(op).to.be.reverted;
+      await expect(op).not.to.be.revertedWithPanic(0x11);
+      console.log(await company.getShares(addr1.address));
+      console.log(await company.getShares(addr2.address));
     });
   });
 });
