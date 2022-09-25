@@ -6,11 +6,15 @@ If you where not careful the contract from your previous exercise could be vulne
 
 The test for this exercise will try to steal Ether from the contract. If you are able to fix the vulnerability the test will pass.
 
-Run the test now. It should fail, or not if you are really good at this ;)
+Run the test now. It should pass, which means that the contract is vulnerable to re entrancy.
+
+If it fails, most probably your contract is not vulnerable to re entrancy.
 
 ## Instructions
 
-5. Compile the code by clicking on the "Test" button above.
+1. Compile the code by clicking on the "Test" button above.
+
+2. Move to next exercise to learn how to fix the vulnerability.
 
 ## Remember
 
