@@ -3,7 +3,7 @@
 `require` is a function that allows you to perform assertions on the code that you are executing. If the assertion is true, the code will continue to execute. If the assertion is false, the code will stop executing and the transaction will be reverted.
 
 ```solidity
-require(condition, 'message');
+require(condition, ["message"]);
 ```
 
 _(Sadly Ethereum Smart Contracts are limited on the final compilation size so try to only include the require checks necessary since they are still code and their execution costs bytes and gas.)_
@@ -36,11 +36,10 @@ function transferStock(
 
 ## Remember
 
-- _For keeping track of the total supply of a token, you can use a contract variable. Recalculating the total supply could be something like_
-
-```solidity
-totalShares = totalShares - shares[stockholder] + newShares;
-```
+- _Use the `require` function to perform assertions on the code that you are executing._
+- _Use the `>` operator to check if a number is greater than another._
+- _Use the `!=` operator to check if two values are not equal._
+- _Is not necessary to pass a message to the `require` function. For this exercise, don't pass a message parameter._
 
 - _Run test manually by executing on a terminal:_
 
