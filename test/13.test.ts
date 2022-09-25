@@ -60,5 +60,22 @@ describe("13", function () {
         ethers.utils.parseEther("0")
       );
     });
+
+    it("Withdraw event emitted", async function () {
+      const { funds, owner, addr1, addr2 } = await loadFixture(
+        deployOneYearLockFixture
+      );
+
+      await funds
+        .connect(addr1)
+        .deposit({ value: ethers.utils.parseEther("1") });
+      await funds
+        .connect(addr2)
+        .deposit({ value: ethers.utils.parseEther("1") });
+
+      await expect(funds.connect(owner).withdraw())
+        .to.emit(funds, "Withdraw")
+        .withArgs(owner.address, ethers.utils.parseEther("2"));
+    });
   });
 });
