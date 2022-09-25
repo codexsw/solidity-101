@@ -1,5 +1,5 @@
 const { npx } = require("../../scripts/helper");
 
-test("14-steps", async () => {
-  expect(await npx(["hardhat", "test", "test/14.test.ts"])).toBe(0);
+test("15-steps", async () => {
+  expect(await npx(["hardhat", "test", "test/15.test.ts"])).toBe(0);
 });
