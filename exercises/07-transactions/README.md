@@ -19,7 +19,7 @@ contract CompanyShares {
     totalShares = initialShares;
   }
 
-  function buyShares() public {
+  function buyShares(uint256 _amount) public {
     // your code goes here...
   }
 
