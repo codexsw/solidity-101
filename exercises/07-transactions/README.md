@@ -30,7 +30,7 @@ contract CompanyShares {
 
 ```
 
-2. Add a variable called `totalShares` that will store the total number of shares in the company. The variable should be of type `uint256` and it should be `public`.
+2. The variable named `totalShares` will store the total number of shares in the company. The variable is of type `uint256` and it is `public`.
 
 3. Add a function called `buyShares` that will allow you to buy shares. The function should receive an `uint256` parameter called `_amount` and it should be `public`. The function should add `_amount` to the `totalShares` variable.
 
