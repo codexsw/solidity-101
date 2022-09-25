@@ -32,11 +32,15 @@ function withdraw(uint256 amount) public reentrancyGuard {
 
 ```
 
+Lets create a modifier that will only allow the owner of the contract to execute a particular function.
+
 ## Instructions
 
-1. Compile the code by clicking on the "Test" button above.
+1. In the `EtherBank` contract, create a modifier called `onlyOwner` that will check if the `msg.sender` is the owner of the contract. If it is not, the function should return **"not-owner"**. The owner of the contract should be stored in a `owner` variable of type `address` in the constructor.
 
-2. Move to next exercise to learn how to fix the vulnerability.
+2. Create a function called `ownerWidthdraw` that will allow the owner of the contract to withdraw Ether from the contract. This function should use the `onlyOwner` modifier. Meaning that only the owner of the contract can execute this function.
+
+3. Compile the code by clicking on the "Test" button above.
 
 ## Remember
 
