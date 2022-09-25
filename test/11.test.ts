@@ -55,6 +55,21 @@ describe("11", function () {
       ).to.changeEtherBalance(addr1, ethers.utils.parseEther("1.0"));
     });
 
+    it("widthdraw 1 ether, adjust balances", async function () {
+      const { bank, addr1 } = await loadFixture(deployOneYearLockFixture);
+
+      await expect(
+        bank.connect(addr1).deposit({ value: ethers.utils.parseEther("2") })
+      ).to.changeEtherBalance(addr1, ethers.utils.parseEther("-2.0"));
+
+      await expect(
+        bank.connect(addr1).widthdraw(ethers.utils.parseEther("1.0"))
+      ).to.changeEtherBalance(addr1, ethers.utils.parseEther("1.0"));
+      expect(await bank.connect(addr1).getBalance()).to.equal(
+        ethers.utils.parseEther("1.0")
+      );
+    });
+
     it("reverted if lower balance", async function () {
       const { bank, addr1 } = await loadFixture(deployOneYearLockFixture);
 
