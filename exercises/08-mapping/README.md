@@ -8,7 +8,7 @@ mapping(address => uint256) public balances;
 
 In the example above, the key is an `address` and the value is a `uint256`. The `balances` variable is a mapping that stores the balance of an address. The `public` keyword makes the variable accessible from outside the smart contract.
 
-_This is actually how tokens are stored in the Ethereum blockchain. The key is the address of the token holder and the value is the balance of the token holder._
+_This is usually how tokens are stored in the Ethereum blockchain. The key is the address of the token holder and the value is the balance of the token holder._
 
 ## Instructions
 
@@ -53,5 +53,5 @@ totalShares = totalShares - shares[stockholder] + newShares;
 - _Run test manually by executing on a terminal:_
 
 ```shell
-npx hardhat test test/07.test.ts
+npx hardhat test test/08.test.ts
 ```

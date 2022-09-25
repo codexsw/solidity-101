@@ -2,7 +2,7 @@ import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
-describe("06", function () {
+describe("08", function () {
   async function deployOneYearLockFixture() {
     const CompanyShares = await ethers.getContractFactory("CompanyStock");
     const company = await CompanyShares.deploy();
@@ -61,7 +61,7 @@ describe("06", function () {
       await company.setShares(addr1.address, 3345);
       await company.setShares(addr2.address, 18900);
       await company.setShares(addr2.address, 3332);
-      expect(await company.getTotalShares()).to.equal(3345 + 18900 - 3332);
+      expect(await company.getTotalShares()).to.equal(3345 + 3332);
     });
   });
 });
