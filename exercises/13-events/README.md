@@ -46,6 +46,8 @@ contract Fundraiser {
   address private owner;
   uint256 private goal;
 
+  // your code here
+
   constructor(uint256 _goal) {
     owner = msg.sender;
     goal = _goal;
@@ -58,10 +60,10 @@ contract Fundraiser {
 
   function withdraw() public {
     require(msg.sender == owner);
-    // your code here
     uint256 amount = address(this).balance;
     (bool success, ) = msg.sender.call{ value: amount }("");
     require(success);
+    // your code here
   }
 
   function getBalance() public view returns (uint256) {
