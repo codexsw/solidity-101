@@ -14,7 +14,7 @@ describe("12", function () {
   }
 
   describe("deposit", function () {
-    it("hack contract", async function () {
+    it("widthdraw with re-entrancy guard", async function () {
       const { bank, addr1, attacker, addr2 } = await loadFixture(
         deployOneYearLockFixture
       );
@@ -26,9 +26,6 @@ describe("12", function () {
       expect(await bank.connect(addr1).getBalance()).to.equal(
         ethers.utils.parseEther("10")
       );
-
-      await expect(attacker.attack({ value: ethers.utils.parseEther("1.0") }))
-        .to.be.reverted;
     });
   });
 });
