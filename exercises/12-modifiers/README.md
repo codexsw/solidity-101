@@ -46,7 +46,7 @@ Lets create a modifier that will only allow the owner of the contract to execute
 
 ## Instructions
 
-1. In the `EtherBank` contract, create a modifier called `onlyOwner` that will check if the `msg.sender` is the owner of the contract. If it is not, the function should return **"not-owner"**. The owner of the contract should be stored in a `owner` variable of type `address` in the constructor.
+1. In the `EtherBank` contract, create a modifier called `onlyOwner` that will check if the `msg.sender` is the owner of the contract. If it is not, the function should revert with **"not-owner"**. The owner of the contract should be stored in a `owner` variable of type `address` in the constructor.
 
 2. To store the contract deployer account as the `owner` you will need a `constructor`
 
