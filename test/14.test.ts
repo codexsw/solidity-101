@@ -17,7 +17,7 @@ describe("14", function () {
         deployOneYearLockFixture
       );
 
-      await list.add(addr1.address);
+      await list.add(addr1.address, 10);
       expect(await list.isWhitelisted(addr1.address)).to.be.true;
     });
   });
@@ -28,7 +28,7 @@ describe("14", function () {
         deployOneYearLockFixture
       );
 
-      await list.add(addr1.address);
+      await list.add(addr1.address, 10);
       expect(await list.isWhitelisted(addr1.address)).to.be.true;
 
       await list.remove(addr1.address);
@@ -42,10 +42,9 @@ describe("14", function () {
         deployOneYearLockFixture
       );
 
-      await list.add(addr1.address);
+      await list.add(addr1.address, 10);
       expect(await list.isWhitelisted(addr1.address)).to.be.true;
 
-      await list.setMaxMint(addr1.address, 10);
       expect(await list.getMaxMint(addr1.address)).to.be.equal(10);
     });
   });
@@ -56,11 +55,10 @@ describe("14", function () {
         deployOneYearLockFixture
       );
 
-      await list.add(addr1.address);
+      await list.add(addr1.address, 9);
       expect(await list.isWhitelisted(addr1.address)).to.be.true;
 
-      await list.setMinted(addr1.address, 10);
-      expect(await list.getMinted(addr1.address)).to.be.equal(10);
+      expect(await list.getMinted(addr1.address)).to.be.equal(0);
     });
   });
 });

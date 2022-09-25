@@ -144,6 +144,10 @@ contract Whitelist {
 
 ## Remember
 
+- _Try to implement the `isWhitelisted` function first since most tests depend on it._
+
+- _To check existence on a Solidity mapping try to check if one property has a value different than 0._
+
 - _Run test manually by executing on a terminal:_
 
 ```shell
