@@ -43,7 +43,7 @@ describe("11", function () {
   });
 
   describe("withdraw", function () {
-    it("widthdraw 1 ether", async function () {
+    it("withdraw 1 ether", async function () {
       const { bank, addr1 } = await loadFixture(deployOneYearLockFixture);
 
       await expect(
@@ -51,11 +51,11 @@ describe("11", function () {
       ).to.changeEtherBalance(addr1, ethers.utils.parseEther("-2.0"));
 
       await expect(
-        bank.connect(addr1).widthdraw(ethers.utils.parseEther("1.0"))
+        bank.connect(addr1).withdraw(ethers.utils.parseEther("1.0"))
       ).to.changeEtherBalance(addr1, ethers.utils.parseEther("1.0"));
     });
 
-    it("widthdraw 1 ether, adjust balances", async function () {
+    it("withdraw 1 ether, adjust balances", async function () {
       const { bank, addr1 } = await loadFixture(deployOneYearLockFixture);
 
       await expect(
@@ -63,7 +63,7 @@ describe("11", function () {
       ).to.changeEtherBalance(addr1, ethers.utils.parseEther("-2.0"));
 
       await expect(
-        bank.connect(addr1).widthdraw(ethers.utils.parseEther("1.0"))
+        bank.connect(addr1).withdraw(ethers.utils.parseEther("1.0"))
       ).to.changeEtherBalance(addr1, ethers.utils.parseEther("1.0"));
       expect(await bank.connect(addr1).getBalance()).to.equal(
         ethers.utils.parseEther("1.0")
@@ -75,7 +75,7 @@ describe("11", function () {
 
       bank.connect(addr1).deposit({ value: ethers.utils.parseEther("2.0") });
       await expect(
-        bank.connect(addr1).widthdraw(ethers.utils.parseEther("3.0"))
+        bank.connect(addr1).withdraw(ethers.utils.parseEther("3.0"))
       ).to.be.revertedWith("low-balance");
     });
   });
