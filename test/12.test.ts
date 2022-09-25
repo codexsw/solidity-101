@@ -12,22 +12,31 @@ describe("12", function () {
   }
 
   describe("deposit", function () {
-    it("widthdraw with re-entrancy guard", async function () {
+    it("widthdraw with onlyOwner guard", async function () {
       const { bank, owner, addr1 } = await loadFixture(
         deployOneYearLockFixture
       );
 
       await expect(
         bank.deposit({ value: ethers.utils.parseEther("10") })
-      ).to.changeEtherBalance(addr1, ethers.utils.parseEther("-10.0"));
+      ).to.changeEtherBalance(owner, ethers.utils.parseEther("-10.0"));
+
+      await expect(bank.ownerWithdraw(ethers.utils.parseEther("1.0"))).not.to.be
+        .reverted;
+    });
+
+    it("should fail if another address tries to use ownerWithdraw", async function () {
+      const { bank, owner, addr1 } = await loadFixture(
+        deployOneYearLockFixture
+      );
 
       await expect(
-        bank.connect(addr1).deposit({ value: ethers.utils.parseEther("10") })
-      ).to.changeEtherBalance(addr1, ethers.utils.parseEther("-10.0"));
+        bank.deposit({ value: ethers.utils.parseEther("10") })
+      ).to.changeEtherBalance(owner, ethers.utils.parseEther("-10.0"));
 
-      expect(await bank.connect(addr1).getBalance()).to.equal(
-        ethers.utils.parseEther("20")
-      );
+      await expect(
+        bank.connect(addr1).ownerWithdraw(ethers.utils.parseEther("1.0"))
+      ).to.be.revertedWith("not-owner");
     });
   });
 });
