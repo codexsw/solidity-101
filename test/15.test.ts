@@ -16,4 +16,32 @@ describe("15", function () {
       expect(await insurance.getStatus()).to.equal(ethers.BigNumber.from(1));
     });
   });
+
+  describe("isActive", function () {
+    it("not active yet", async function () {
+      const { insurance } = await loadFixture(deployOneYearLockFixture);
+      await insurance.changeStatus(ethers.BigNumber.from(0));
+      expect(await insurance.isActive()).not.to.be.true;
+    });
+
+    it("active", async function () {
+      const { insurance } = await loadFixture(deployOneYearLockFixture);
+      await insurance.changeStatus(ethers.BigNumber.from(1));
+      expect(await insurance.isActive()).to.be.true;
+    });
+  });
+
+  describe("notActive", function () {
+    it("still active", async function () {
+      const { insurance } = await loadFixture(deployOneYearLockFixture);
+      await insurance.changeStatus(ethers.BigNumber.from(1));
+      expect(await insurance.notInactive()).not.to.be.true;
+    });
+
+    it("not active", async function () {
+      const { insurance } = await loadFixture(deployOneYearLockFixture);
+      await insurance.changeStatus(ethers.BigNumber.from(3));
+      expect(await insurance.notActive()).to.be.true;
+    });
+  });
 });
