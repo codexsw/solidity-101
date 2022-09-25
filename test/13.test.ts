@@ -41,4 +41,24 @@ describe("13", function () {
         .withArgs(addr1.address, ethers.utils.parseEther("1"));
     });
   });
+
+  describe("withdraw", function () {
+    it("withdraw", async function () {
+      const { funds, owner, addr1, addr2 } = await loadFixture(
+        deployOneYearLockFixture
+      );
+
+      await funds
+        .connect(addr1)
+        .deposit({ value: ethers.utils.parseEther("1") });
+      await funds
+        .connect(addr2)
+        .deposit({ value: ethers.utils.parseEther("1") });
+
+      await funds.connect(owner).withdraw();
+      expect(await funds.getBalance()).to.be.equal(
+        ethers.utils.parseEther("0")
+      );
+    });
+  });
 });
