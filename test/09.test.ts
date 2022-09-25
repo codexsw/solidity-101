@@ -89,8 +89,13 @@ describe("09", function () {
       const op = company.transferStock(2000, addr1.address, addr2.address);
       await expect(op).to.be.reverted;
       await expect(op).not.to.be.revertedWithPanic(0x11);
-      console.log(await company.getShares(addr1.address));
-      console.log(await company.getShares(addr2.address));
+    });
+
+    it("cannot transfer to itself", async function () {
+      const { company, addr1 } = await loadFixture(deployOneYearLockFixture);
+      await company.setShares(addr1.address, 1000);
+      const op = company.transferStock(100, addr1.address, addr1.address);
+      await expect(op).to.be.reverted;
     });
   });
 });

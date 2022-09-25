@@ -30,9 +30,9 @@ function transferStock(
 
 3. Add a `require` statement to check that the amount of stock to transfer is greater than 0.
 
-4. Add a `require` statement to check that the source address is not the same as the destination address.
+4. Add a `require` statement to check that the source address has enough stock to transfer.
 
-5. Add a `require` statement to check that the source address has enough stock to transfer.
+5. Add a `require` statement to check that the source address is not the same as the destination address.
 
 ## Remember
 
