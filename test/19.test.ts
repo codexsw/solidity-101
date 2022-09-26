@@ -23,7 +23,8 @@ describe("19", function () {
       const { token, owner, addr1 } = await loadFixture(
         deployOneYearLockFixture
       );
-      await expect(token.transfer(addr1.address, 100)).to.be.reverted;
+      await expect(token.connect(addr1).transfer(addr1.address, 100)).to.be
+        .reverted;
     });
   });
 });
