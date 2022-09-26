@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("12", function () {
-  async function deployOneYearLockFixture() {
+  async function deployFixture() {
     const EtherBank = await ethers.getContractFactory("EtherBank");
     const bank = await EtherBank.deploy();
 
@@ -13,9 +13,7 @@ describe("12", function () {
 
   describe("deposit", function () {
     it("widthdraw with onlyOwner guard", async function () {
-      const { bank, owner, addr1 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { bank, owner, addr1 } = await loadFixture(deployFixture);
 
       await expect(
         bank.deposit({ value: ethers.utils.parseEther("10") })
@@ -26,9 +24,7 @@ describe("12", function () {
     });
 
     it("should fail if another address tries to use ownerWithdraw", async function () {
-      const { bank, owner, addr1 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { bank, owner, addr1 } = await loadFixture(deployFixture);
 
       await expect(
         bank.deposit({ value: ethers.utils.parseEther("10") })

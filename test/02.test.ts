@@ -1,10 +1,9 @@
-import { time, loadFixture } from "@nomicfoundation/hardhat-network-helpers";
-import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
+import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("02", function () {
-  async function deployOneYearLockFixture() {
+  async function deployFixture() {
     const HelloWorld = await ethers.getContractFactory("HelloWorld");
     const helloWorld = await HelloWorld.deploy();
 
@@ -13,7 +12,7 @@ describe("02", function () {
 
   describe("Deployment", function () {
     it("Call hello", async function () {
-      const { helloWorld } = await loadFixture(deployOneYearLockFixture);
+      const { helloWorld } = await loadFixture(deployFixture);
 
       expect(await helloWorld.hello()).to.equal("Hello World!");
     });

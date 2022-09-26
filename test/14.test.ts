@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("14", function () {
-  async function deployOneYearLockFixture() {
+  async function deployFixture() {
     const Whitelist = await ethers.getContractFactory("Whitelist");
     const list = await Whitelist.deploy();
 
@@ -13,9 +13,7 @@ describe("14", function () {
 
   describe("add", function () {
     it("add", async function () {
-      const { list, owner, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { list, owner, addr1, addr2 } = await loadFixture(deployFixture);
 
       await list.add(addr1.address, 10);
       expect(await list.isWhitelisted(addr1.address)).to.be.true;
@@ -24,9 +22,7 @@ describe("14", function () {
 
   describe("remove", function () {
     it("remove", async function () {
-      const { list, owner, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { list, owner, addr1, addr2 } = await loadFixture(deployFixture);
 
       await list.add(addr1.address, 10);
       expect(await list.isWhitelisted(addr1.address)).to.be.true;
@@ -38,9 +34,7 @@ describe("14", function () {
 
   describe("getMaxMint", function () {
     it("getMaxMint", async function () {
-      const { list, owner, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { list, owner, addr1, addr2 } = await loadFixture(deployFixture);
 
       await list.add(addr1.address, 10);
       expect(await list.isWhitelisted(addr1.address)).to.be.true;
@@ -51,9 +45,7 @@ describe("14", function () {
 
   describe("getMinted", function () {
     it("getMinted", async function () {
-      const { list, owner, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { list, owner, addr1, addr2 } = await loadFixture(deployFixture);
 
       await list.add(addr1.address, 9);
       expect(await list.isWhitelisted(addr1.address)).to.be.true;

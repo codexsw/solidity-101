@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("11", function () {
-  async function deployOneYearLockFixture() {
+  async function deployFixture() {
     const EtherBank = await ethers.getContractFactory("EtherBank");
     const bank = await EtherBank.deploy();
     const [owner, addr1, addr2] = await ethers.getSigners();
@@ -12,7 +12,7 @@ describe("11", function () {
 
   describe("deposit", function () {
     it("deposit 1 ether", async function () {
-      const { bank, addr1 } = await loadFixture(deployOneYearLockFixture);
+      const { bank, addr1 } = await loadFixture(deployFixture);
 
       await expect(
         bank.connect(addr1).deposit({ value: ethers.utils.parseEther("1") })
@@ -24,9 +24,7 @@ describe("11", function () {
     });
 
     it("more deposits", async function () {
-      const { bank, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { bank, addr1, addr2 } = await loadFixture(deployFixture);
 
       await expect(
         bank.connect(addr1).deposit({ value: ethers.utils.parseEther("0.5") })
@@ -44,7 +42,7 @@ describe("11", function () {
 
   describe("withdraw", function () {
     it("withdraw 1 ether", async function () {
-      const { bank, addr1 } = await loadFixture(deployOneYearLockFixture);
+      const { bank, addr1 } = await loadFixture(deployFixture);
 
       await expect(
         bank.connect(addr1).deposit({ value: ethers.utils.parseEther("2") })
@@ -56,7 +54,7 @@ describe("11", function () {
     });
 
     it("withdraw 1 ether, adjust balances", async function () {
-      const { bank, addr1 } = await loadFixture(deployOneYearLockFixture);
+      const { bank, addr1 } = await loadFixture(deployFixture);
 
       await expect(
         bank.connect(addr1).deposit({ value: ethers.utils.parseEther("2") })
@@ -71,7 +69,7 @@ describe("11", function () {
     });
 
     it("reverted if lower balance", async function () {
-      const { bank, addr1 } = await loadFixture(deployOneYearLockFixture);
+      const { bank, addr1 } = await loadFixture(deployFixture);
 
       bank.connect(addr1).deposit({ value: ethers.utils.parseEther("2.0") });
       await expect(

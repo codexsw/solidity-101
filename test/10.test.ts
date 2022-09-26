@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("10", function () {
-  async function deployOneYearLockFixture() {
+  async function deployFixture() {
     const CompanyShares = await ethers.getContractFactory("CompanyStock");
     const company = await CompanyShares.deploy();
     const [owner, addr1, addr2] = await ethers.getSigners();
@@ -12,15 +12,13 @@ describe("10", function () {
 
   describe("setShares", function () {
     it("set shares to address 1", async function () {
-      const { company, addr1 } = await loadFixture(deployOneYearLockFixture);
+      const { company, addr1 } = await loadFixture(deployFixture);
       await company.setShares(addr1.address, 10000);
       expect(await company.getShares(addr1.address)).to.equal(10000);
     });
 
     it("address 1 and address 2", async function () {
-      const { company, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { company, addr1, addr2 } = await loadFixture(deployFixture);
       await company.setShares(addr1.address, 3345);
       await company.setShares(addr2.address, 18900);
 
@@ -29,7 +27,7 @@ describe("10", function () {
     });
 
     it("override address 1 shares", async function () {
-      const { company, addr1 } = await loadFixture(deployOneYearLockFixture);
+      const { company, addr1 } = await loadFixture(deployFixture);
       await company.setShares(addr1.address, 3345);
       await company.setShares(addr1.address, 18900);
 
@@ -39,18 +37,14 @@ describe("10", function () {
 
   describe("getTotalShares", function () {
     it("gets total supply", async function () {
-      const { company, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { company, addr1, addr2 } = await loadFixture(deployFixture);
       await company.setShares(addr1.address, 3345);
       await company.setShares(addr2.address, 18900);
       expect(await company.getTotalShares()).to.equal(22245);
     });
 
     it("gets total supply after sell", async function () {
-      const { company, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { company, addr1, addr2 } = await loadFixture(deployFixture);
       await company.setShares(addr1.address, 3345);
       await company.setShares(addr2.address, 18900);
       await company.setShares(addr2.address, 3332);
@@ -60,9 +54,7 @@ describe("10", function () {
 
   describe("transferShares", function () {
     it("transfer shares", async function () {
-      const { company, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { company, addr1, addr2 } = await loadFixture(deployFixture);
       await company.setShares(addr1.address, 1000);
       await company.setShares(addr2.address, 1000);
       await company.transferStock(500, addr1.address, addr2.address);
@@ -71,9 +63,7 @@ describe("10", function () {
     });
 
     it("transfer 0 should revert", async function () {
-      const { company, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { company, addr1, addr2 } = await loadFixture(deployFixture);
       await company.setShares(addr1.address, 1000);
       await company.setShares(addr2.address, 1000);
       await expect(company.transferStock(0, addr1.address, addr2.address)).to.be
@@ -81,9 +71,7 @@ describe("10", function () {
     });
 
     it("transfer more stock than available should revert", async function () {
-      const { company, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { company, addr1, addr2 } = await loadFixture(deployFixture);
       await company.setShares(addr1.address, 1000);
       await company.setShares(addr2.address, 1000);
       const op = company.transferStock(2000, addr1.address, addr2.address);
@@ -92,7 +80,7 @@ describe("10", function () {
     });
 
     it("cannot transfer to itself", async function () {
-      const { company, addr1 } = await loadFixture(deployOneYearLockFixture);
+      const { company, addr1 } = await loadFixture(deployFixture);
       await company.setShares(addr1.address, 1000);
       const op = company.transferStock(100, addr1.address, addr1.address);
       await expect(op).to.be.reverted;
@@ -101,9 +89,7 @@ describe("10", function () {
 
   describe("getSharePct", async function () {
     it("gets share pct", async function () {
-      const { company, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { company, addr1, addr2 } = await loadFixture(deployFixture);
       await company.setShares(addr1.address, 1000);
       await company.setShares(addr2.address, 1000);
       expect(await company.getSharePct(addr1.address)).to.equal(50);

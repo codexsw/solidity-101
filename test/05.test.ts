@@ -3,14 +3,14 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("05", function () {
-  async function deployOneYearLockFixture() {
+  async function deployFixture() {
     const NumberStorage = await ethers.getContractFactory("NumberStorage05");
     return { NumberStorage };
   }
 
   describe("Deployment", function () {
     it("Store numbers", async function () {
-      const { NumberStorage } = await loadFixture(deployOneYearLockFixture);
+      const { NumberStorage } = await loadFixture(deployFixture);
       const numberStorage = await NumberStorage.deploy(1992, 2021);
       await numberStorage.deployed();
 
@@ -19,7 +19,7 @@ describe("05", function () {
     });
 
     it("getSum", async function () {
-      const { NumberStorage } = await loadFixture(deployOneYearLockFixture);
+      const { NumberStorage } = await loadFixture(deployFixture);
       const numberStorage = await NumberStorage.deploy(233, 998);
       await numberStorage.deployed();
 

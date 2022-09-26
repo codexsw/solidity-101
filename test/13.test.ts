@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("13", function () {
-  async function deployOneYearLockFixture() {
+  async function deployFixture() {
     const Fundraiser = await ethers.getContractFactory("Fundraiser");
     const funds = await Fundraiser.deploy(ethers.utils.parseEther("10.0"));
 
@@ -13,9 +13,7 @@ describe("13", function () {
 
   describe("deposit", function () {
     it("deposit by several addresses", async function () {
-      const { funds, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { funds, addr1, addr2 } = await loadFixture(deployFixture);
 
       await funds
         .connect(addr1)
@@ -30,9 +28,7 @@ describe("13", function () {
     });
 
     it("Deposit event emitted", async function () {
-      const { funds, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { funds, addr1, addr2 } = await loadFixture(deployFixture);
 
       await expect(
         funds.connect(addr1).deposit({ value: ethers.utils.parseEther("1") })
@@ -44,9 +40,7 @@ describe("13", function () {
 
   describe("withdraw", function () {
     it("withdraw", async function () {
-      const { funds, owner, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { funds, owner, addr1, addr2 } = await loadFixture(deployFixture);
 
       await funds
         .connect(addr1)
@@ -62,9 +56,7 @@ describe("13", function () {
     });
 
     it("Withdraw event emitted", async function () {
-      const { funds, owner, addr1, addr2 } = await loadFixture(
-        deployOneYearLockFixture
-      );
+      const { funds, owner, addr1, addr2 } = await loadFixture(deployFixture);
 
       await funds
         .connect(addr1)

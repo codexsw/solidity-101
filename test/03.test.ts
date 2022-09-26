@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("03", function () {
-  async function deployOneYearLockFixture() {
+  async function deployFixture() {
     const NumberStorage = await ethers.getContractFactory("NumberStorage");
     const numberStorage = await NumberStorage.deploy();
 
@@ -12,7 +12,7 @@ describe("03", function () {
 
   describe("Deployment", function () {
     it("Store number", async function () {
-      const { numberStorage } = await loadFixture(deployOneYearLockFixture);
+      const { numberStorage } = await loadFixture(deployFixture);
 
       await numberStorage.setNumber(1992);
       expect(await numberStorage.number()).to.equal(1992);
