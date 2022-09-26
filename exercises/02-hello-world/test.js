@@ -1,19 +1,7 @@
-const { npx } = require("../../scripts/helper");
-const fs = require("fs");
-const { expect } = require("chai");
-
-const fileExists = (path) => {
-  try {
-    if (fs.existsSync(path)) {
-      return true;
-    }
-  } catch (err) {
-    return false;
-  }
-};
+const { npx, fileExists } = require("../../scripts/helper");
 
 test("contract-exists", async () => {
-  expect(fileExists("../../contracts/HelloWorld.sol")).to.be.true;
+  expect(fileExists("./contracts/HelloWorld.sol")).toBe(true);
 });
 
 test("02-steps", async () => {

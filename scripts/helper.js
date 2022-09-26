@@ -1,6 +1,18 @@
 const { spawn } = require("child_process");
+const fs = require("fs");
 
 module.exports = {
+  fileExists: (path) => {
+    try {
+      if (fs.existsSync(path)) {
+        return true;
+      }
+      return false;
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
+  },
   npx: async (params) => {
     return new Promise((resolve, reject) => {
       const buffer = [];
