@@ -6,6 +6,16 @@ You have learned the basics of Solidity and how to write smart contracts.
 
 There are many more things to learn about Solidity, but you have the basics to start writing your own smart contracts.
 
+## More Solidity topics you need to study.
+
+- Control Structures: `if`, `else`, `while`, `do`, `for`, `break`, `continue`, `return`
+
+- Functions: `function`, `returns`, `modifier`, `view`, `pure`, `payable`, `internal`, `external`, `private`, `public`, `fallback`, `constructor`, `receive`
+
+- Checked Arithmetic: `unchecked`, `checked`
+
+- Error Handling: `try`, `catch`
+
 ## Next Steps
 
 This course has extra modules that you can complete to learn more about Solidity.
