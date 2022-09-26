@@ -212,6 +212,8 @@ An ERC20 contract is a contract that implements the ERC20 standard. The ERC20 st
 
 ## Remember
 
+- OpenZeppelin has an amazing Wizard that helps you create smart contracts. You can use the Wizard to create your own smart contracts. For example, you can use the Wizard to create an ERC20 contract. Go to https://wizard.openzeppelin.com/. Generate a new project. Select the ERC20 contract. Download the project. Copy the code on the `contracts/Token.sol` file. Compile the code by clicking on the "Test" button above. _(Add preminted tokens so the deployer of the contract gets awarded those tokens)_
+
 - _Run test manually by executing on a terminal:_
 
 ```shell
