@@ -8,8 +8,6 @@ First, lets introduce the Solidity programming language. Solidity is a high-leve
 
 A smart contract is a computer protocol intended to digitally facilitate, verify, or enforce the negotiation or performance of a contract. Smart contracts allow the performance of credible transactions without third parties. These transactions are trackable and irreversible.
 
-Smart contracts allow the performance of credible transactions without third parties. These transactions are trackable and irreversible.
-
 ## What is a blockchain?
 
 A blockchain is a continuously growing list of records, called blocks, which are linked and secured using cryptography. Each block typically contains a hash pointer as a link to a previous block, a timestamp and transaction data. By design, blockchains are inherently resistant to modification of the data.
