@@ -38,5 +38,5 @@ constructor(uint256 _number) {
 - _Run test manually by executing on a terminal:_
 
 ```shell
-npx hardhat test test/07.test.ts
+npx hardhat test test/05.test.ts
 ```

@@ -43,5 +43,5 @@ function getSum() public view returns (uint256) {
 - _Run test manually by executing on a terminal:_
 
 ```shell
-npx hardhat test test/07.test.ts
+npx hardhat test test/04.test.ts
 ```
