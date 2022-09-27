@@ -68,5 +68,5 @@ contract NumberStorage {
 - _Run test manually by executing on a terminal:_
 
 ```shell
-npx hardhat test test/07.test.ts
+npx hardhat test test/03.test.ts
 ```
